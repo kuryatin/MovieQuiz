@@ -23,54 +23,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3X-Hj-Af7">
-                                <rect key="frame" x="20" y="106" width="68" height="24"/>
+                                <rect key="frame" x="20" y="106" width="67.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                 <color key="textColor" name="YP White (iOS)"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Pt-Ph-js6">
-                                <rect key="frame" x="20" y="792" width="34" height="36"/>
-                                <color key="backgroundColor" name="YP White (iOS)"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Twj-Bm-1WZ">
+                                <rect key="frame" x="20" y="768" width="374" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Pt-Ph-js6">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
+                                        <color key="backgroundColor" name="YP White (iOS)"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="mCC-Pe-IOk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Нет">
+                                            <color key="titleColor" name="YP Black (iOS)"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jz-Di-4Co">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="60"/>
+                                        <color key="backgroundColor" name="YP White (iOS)"/>
+                                        <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Да">
+                                            <color key="titleColor" name="YP Black (iOS)"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="mCC-Pe-IOk"/>
+                                    <constraint firstItem="9Jz-Di-4Co" firstAttribute="width" secondItem="4Pt-Ph-js6" secondAttribute="width" id="N7m-hX-j2k"/>
+                                    <constraint firstItem="9Jz-Di-4Co" firstAttribute="height" secondItem="4Pt-Ph-js6" secondAttribute="height" id="NpI-5F-ZW6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Нет">
-                                    <color key="titleColor" name="YP Black (iOS)"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jz-Di-4Co">
-                                <rect key="frame" x="258" y="793" width="106" height="35"/>
-                                <color key="backgroundColor" name="YP White (iOS)"/>
-                                <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Да">
-                                    <color key="titleColor" name="YP Black (iOS)"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black (iOS)"/>
                         <constraints>
-                            <constraint firstItem="9Jz-Di-4Co" firstAttribute="leading" secondItem="4Pt-Ph-js6" secondAttribute="trailing" constant="20" id="2wO-ho-aoi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Jz-Di-4Co" secondAttribute="trailing" constant="20" id="DNW-sj-kWc"/>
-                            <constraint firstItem="9Jz-Di-4Co" firstAttribute="width" secondItem="4Pt-Ph-js6" secondAttribute="width" id="W0P-1I-fxr"/>
-                            <constraint firstItem="4Pt-Ph-js6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="b3R-MI-yQ8"/>
+                            <constraint firstItem="Twj-Bm-1WZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5wM-qp-ZOR"/>
+                            <constraint firstItem="Twj-Bm-1WZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rwt-jX-HMm"/>
                             <constraint firstItem="e3X-Hj-Af7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="b5Y-yF-8US"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Jz-Di-4Co" secondAttribute="bottom" id="bJB-Dh-C1D"/>
-                            <constraint firstItem="9Jz-Di-4Co" firstAttribute="height" secondItem="4Pt-Ph-js6" secondAttribute="height" id="eWd-50-01l"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Pt-Ph-js6" secondAttribute="bottom" id="gww-ZL-bMm"/>
+                            <constraint firstItem="Twj-Bm-1WZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cew-ej-9c0"/>
                             <constraint firstItem="e3X-Hj-Af7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mMQ-Z5-av8"/>
                         </constraints>
                     </view>
