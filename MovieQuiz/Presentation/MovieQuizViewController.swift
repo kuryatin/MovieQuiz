@@ -5,15 +5,43 @@ final class MovieQuizViewController: UIViewController {
     @IBAction private func yesButtonClicked(_ sender: UIButton) {
         print("yesButtonClicked")
         currentQuestionIndex += 1
-            let currentQuestion = questions[currentQuestionIndex]
-            show(quiz: convert(model: currentQuestion))
+        let currentQuestion = questions[currentQuestionIndex]
+        let givenAnswer = true
+        let correctAnswer = currentQuestion.correctAnswer
+        let isCorrect = givenAnswer == correctAnswer
+        
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.imageView.layer.borderWidth = 8
+            self.currentQuestionIndex += 1
+            let nextQuestion = self.questions[self.currentQuestionIndex]
+            self.show(quiz: self.convert(model: nextQuestion))
+        }
     }
     
     @IBAction private func noButtonClicked(_ sender: UIButton) {
         print("noButtonClicked")
         currentQuestionIndex += 1
-            let currentQuestion = questions[currentQuestionIndex]
-            show(quiz: convert(model: currentQuestion))
+        let currentQuestion = questions[currentQuestionIndex]
+        let givenAnswer = false
+        let correctAnswer = currentQuestion.correctAnswer
+        let isCorrect = givenAnswer == correctAnswer
+        
+        showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.imageView.layer.borderWidth = 1
+            self.currentQuestionIndex += 1
+            let nextQuestion = self.questions[self.currentQuestionIndex]
+            self.show(quiz: self.convert(model: nextQuestion))
+        }
+    }
+    private func showAnswerResult(isCorrect: Bool) {
+        imageView.layer.masksToBounds = true
+        imageView.layer.borderWidth = 8
+        imageView.layer.borderColor = isCorrect ? UIColor.green.cgColor : UIColor.red.cgColor
+        imageView.layer.cornerRadius = 20
     }
     
     @IBOutlet private var imageView: UIImageView!
