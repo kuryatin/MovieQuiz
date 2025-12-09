@@ -1,5 +1,5 @@
 import UIKit
-
+//
 final class MovieQuizViewController: UIViewController {
     
     @IBOutlet private var imageView: UIImageView!
